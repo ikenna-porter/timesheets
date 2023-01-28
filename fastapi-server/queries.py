@@ -3,6 +3,12 @@ from pydantic import BaseModel
 from contextlib import closing
 from typing import List
 
+class TruncatedTimesheetOut(BaseModel):
+    project: str
+    client: str
+    hours: float
+    billable_hours: float
+    billable_amount: float
 
 class TimesheetOut(BaseModel):
     date: str
@@ -29,7 +35,7 @@ class TimesheetIn(BaseModel):
 
 
 class TimesheetRepo:
-    def get_all(self) -> List[TimesheetOut]:
+    def get_all(self) -> List[TruncatedTimesheetOut]:
         with sqlite3.connect("timesheets.db") as conn:
             with closing(conn.cursor()) as db:
                 db.execute(
