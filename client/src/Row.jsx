@@ -8,6 +8,7 @@ const formatter = new Intl.NumberFormat('en-US', {
 
 function Row(props) {
     const [timesheet, setTimesheet] = useState(props.timesheet)
+    console.log(timesheet)
 
     return(
         <tr>
@@ -15,7 +16,7 @@ function Row(props) {
             <td>{timesheet.client}</td>
             <td>{timesheet.hours.toFixed(2)}</td>
             <td>{timesheet.billableHours.toFixed(2)}</td>
-            <td>{timesheet.billableAmount/timesheet.hours ? `(${(timesheet.billableAmount/timesheet.hours).toFixed(0)}%)` : "(0%)"}</td>
+            <td>{timesheet.billableHours/timesheet.hours ? `(${(timesheet.billableHours/timesheet.hours * 100).toFixed(0)}%)` : "(0%)"}</td>
             <td>{timesheet.billableAmount ? formatter.format(timesheet.billableAmount) : "--"}</td>
         </tr>
     )
