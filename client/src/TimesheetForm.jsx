@@ -61,7 +61,7 @@ function TimesheetForm(props) {
             <input onChange={e => setProjectCode(e.target.value)} required="required" name="project-code" type="text" placeholder="Project Code"/>
             <input onChange={e => setHours(e.target.value)} required="required" name="hours" type="number" placeholder="Hours" step="0.01" min="0" />
             <select onChange={e => setBillable(e.target.value)} required="required" name="billable" id="billable">
-                <option value="" disabled selected>Billable</option>
+                <option value="" hidden>Billable</option>
                 <option value="yes">Yes</option>
                 <option value="no">No</option>
             </select>

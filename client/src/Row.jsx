@@ -8,7 +8,6 @@ const formatter = new Intl.NumberFormat('en-US', {
 
 function Row(props) {
     const [timesheet, setTimesheet] = useState(props.timesheet)
-    console.log(timesheet)
 
     return(
         <tr>

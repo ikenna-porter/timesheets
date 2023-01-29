@@ -2,8 +2,12 @@ import {useState, useEffect} from "react";
 import Row from "./Row";
 import {parseTimesheets} from "./parser"
 
-function Table(props) {
+const formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+  });
 
+function Table(props) {
     const [timesheets, setTimesheets] = useState([]);
 
     useEffect(() => {
@@ -18,6 +22,10 @@ function Table(props) {
             
             const data = parseTimesheets(unfilteredTimesheets);
             setTimesheets(data)
+
+            //Updates total billable amount and total hours tracked
+            props.setTotalHoursTracked(data.reduce((acc, sheet) => acc + sheet.hours, 0).toFixed(2));
+            props.setTotalBillableAmount(formatter.format(data.reduce((acc, sheet) => acc + sheet.billableAmount, 0)));
         }
 
         fetchAndParseTimesheets();
@@ -27,7 +35,7 @@ function Table(props) {
         <table>
             <thead>
                 <tr>
-                    <th>Name</th>
+                    <th className="first-header">Name</th>
                     <th>Clients</th>
                     <th>Hours</th>
                     <th colSpan="2">Billable Hours</th>

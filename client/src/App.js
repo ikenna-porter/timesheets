@@ -12,19 +12,22 @@ function App(props) {
       <div className="data">
         <div className="totals">
           <div>
-            <h4>Hours Tracked</h4>
+            <p>Hours Tracked</p>
             <strong>
-              <div>INPUT HOURS LATER</div>
+              <div>{totalHoursTracked}</div>
             </strong>
           </div>
           <div>
-            <h4>Billable Amount</h4>
+            <p>Billable Amount</p>
             <strong>
-              <div>INPUT AMOUNT LATER</div>
+              <div>{totalBillableAmount}</div>
             </strong>
           </div>
         </div>
-        <Table></Table>
+        <Table
+          setTotalBillableAmount={setTotalBillableAmount}
+          setTotalHoursTracked={setTotalHoursTracked} 
+        />
       </div>
       <div className="form">
         <TimesheetForm/>
