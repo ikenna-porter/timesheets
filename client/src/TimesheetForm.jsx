@@ -69,16 +69,10 @@ function TimesheetForm(props) {
             <input onChange={e => setLastName(e.target.value)} type="text" required="required" name="last-name" placeholder="Last Name"/>
             <input onChange={e => setBillableRate(e.target.value)} required="required" name="billable-rate" type="number" placeholder="Billable Rate" step="0.01" min="0" />
 
-            {/* <div>
-                <input type="text" list="cars" />
-                <datalist id="cars">
-                    <option>Volvo</option>
-                    <option>Saab</option>
-                    <option>Mercedes</option>
-                    <option>Audi</option>
-                </datalist>
-            </div> */}
-
+            <div class="input_field"> 
+                <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+                <input type="email" name="email" placeholder="Email" required />
+            </div>
             <button type="submit">Submit</button>
         </form>
     )

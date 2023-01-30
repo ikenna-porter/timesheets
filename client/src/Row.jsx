@@ -16,7 +16,7 @@ function Row(props) {
             <td>{timesheet.hours.toFixed(2)}</td>
             <td>{timesheet.billableHours.toFixed(2)}</td>
             <td>{timesheet.billableHours/timesheet.hours ? `(${(timesheet.billableHours/timesheet.hours * 100).toFixed(0)}%)` : "(0%)"}</td>
-            <td>{timesheet.billableAmount ? formatter.format(timesheet.billableAmount) : "--"}</td>
+            <td>{timesheet.billableAmount ? formatter.format(timesheet.billableAmount) : "—"}</td>
         </tr>
     )
 }

@@ -4,8 +4,9 @@
     align-items: center;
 }
 
+/* TIMESHEET TABLE */
 .data {
-    border: 1px solid gray;
+    /* border: 1px solid gray; */
     padding: 25px;
 }
 
@@ -13,26 +14,110 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 25px;
+    font-size: 20px;
 }
 
-.total div p {
-    margin: 0px;
+p {
+    margin: 0 0 5px 0;
+    color: #848484;
+    font-weight: 800;
+    font-size: 12px;
 }
 
-table {
-    border-collapse: collapse;
-}
+table {border-collapse: collapse;}
 
-.first-header {
-    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(245,245,245,1) 100%);
-}
+.first-header {background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(245,245,245,1) 100%);}
 
 th {
     background: linear-gradient(180deg, rgba(254,254,254,1) 0%, rgba(229,229,229,1) 100%);
     border: 1px solid #cdcdcd;
+    font-weight: 500;
+    font-size: 12px;
+}
+
+/* Aligns text of Name and clients th and td  */
+th:nth-child(-n+2), td:nth-child(-n+2) {
+    text-align: left;
+    padding: 0em 1em;
+}
+
+/* Billable hours (total and percentages) and billable amount  */
+th:nth-child(n+3) {
+    text-align: right;
+    padding: 0em 1em 0em 5em;
 }
 
 tr {
-    height: 2em;
+    height: 2.5em;
     border-bottom: 1px solid #e1e1e1;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+/* Name, clients and hours columns */
+td:nth-child(-n+3) {color: #5a83ac}
+
+/* Billable hours total column */
+td:nth-child(4) {
+    text-align: right; 
+    padding-left: 2em}
+
+/* Percentages column */
+td:nth-child(5) {color: #b2b2b2}
+
+/* Targets hours, billable hours percentages and billable amount columns  */
+td:nth-child(n+5), td:nth-child(3) {
+    text-align: right;
+    padding: 0em 1em 0em 0em;
+}
+
+/* Billable amount column */
+td:nth-child(6) {font-weight: bold;}
+
+
+
+/* TIMESHEET FORM */
+.form {
+    border: 1px solid gray;
+    padding: 25px;
+    text-align: center;
+}
+
+input, select {
+    display: block;
+    margin: 10px;
+}
+
+.input_field {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #333;
+    height: 100%;
+    border-right: 1px solid grey;
+    text-align: center;
+    width: 30px;
+  }
+
+  i {
+    padding-top: 10px;
+  }
+
+  input {
+    /* &[type="text"], &[type="email"], &[type="password"] { */
+      width: 100%;
+      padding: 0px 10px 9px 35px;
+      height: 35px;
+      border: 1px solid grey;
+      box-sizing: border-box;
+      outline: none;
+      -webkit-transition: all 0.30s ease-in-out;
+      -moz-transition: all 0.30s ease-in-out;
+      -ms-transition: all 0.30s ease-in-out;
+      transition: all 0.30s ease-in-out;
 }

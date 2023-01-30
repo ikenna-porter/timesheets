@@ -30,6 +30,7 @@ function App(props) {
         />
       </div>
       <div className="form">
+        <h2>Create a Timesheet</h2>
         <TimesheetForm/>
       </div>
     </div>
