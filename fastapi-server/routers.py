@@ -6,8 +6,8 @@ from fastapi.middleware.cors import CORSMiddleware
 
 router = FastAPI()
 
+#CORS Settings:
 origins = ["*"]
-
 router.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
@@ -15,6 +15,7 @@ router.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 @router.get("/api/timesheets", response_model=List[TimesheetOut])
 def get_all_timesheets(repo: TimesheetRepo = Depends()):
