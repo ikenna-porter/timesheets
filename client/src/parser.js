@@ -11,7 +11,7 @@ export const parseTimesheets = (unfilteredTimesheets) => {
         newTimesheet.billableHours = calculateBillableHours(oldTimesheet);
         newTimesheet.billableAmount = newTimesheet.billableHours * oldTimesheet.billable_rate;
 
-        filteredTimesheets.push(newTimesheet)
+        filteredTimesheets.push(newTimesheet);
     });
     
     return objToArr(reduceTimesheets(filteredTimesheets));
@@ -19,7 +19,7 @@ export const parseTimesheets = (unfilteredTimesheets) => {
 
 const calculateBillableHours = (timesheet) => {
     let billableHours;
-    if (timesheet.billable == "No") billableHours = 0;
+    if (timesheet.billable == "no") billableHours = 0;
     else billableHours = timesheet.hours;
     return billableHours;
 }
@@ -49,8 +49,8 @@ const reduceTimesheets = (timesheets) => {
 const objToArr = (obj) => {
     const result = [];
     for (let key in obj) {
-        obj[key]["project"] = key
-        result.push(obj[key])
+        obj[key]["project"] = key;
+        result.push(obj[key]);
     }
-    return result
+    return result;
 }

@@ -1,13 +1,13 @@
 import {useState} from "react";
 
 
-const formatter = new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD',
+const formatter = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
   });
 
 function Row(props) {
-    const [timesheet, setTimesheet] = useState(props.timesheet)
+    const [timesheet, setTimesheet] = useState(props.timesheet);
 
     return(
         <tr>

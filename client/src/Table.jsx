@@ -1,11 +1,11 @@
 import {useState, useEffect} from "react";
 import Row from "./Row";
-import {parseTimesheets} from "./parser"
+import {parseTimesheets} from "./parser";
 
 // Formatter for US dollar
-const formatter = new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD',
+const formatter = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
   });
 
 // Function to add a comma to indicate the thousandth's place in a number
@@ -25,7 +25,7 @@ function Table(props) {
             }
             
             const data = parseTimesheets(unfilteredTimesheets);
-            setTimesheets(data)
+            setTimesheets(data);
 
             //Updates total hours tracked and adds a comma to total for thousand's place
             props.setTotalHoursTracked(
