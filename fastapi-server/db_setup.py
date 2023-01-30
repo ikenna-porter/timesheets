@@ -38,13 +38,12 @@ def populate_timesheet_table(timesheet_data):
     """Adds data from csv file into timesheets table."""
     conn = sqlite3.connect("timesheets.db")
     c = conn.cursor()
-    # id = 1
+
     for i in range(2, len(timesheet_data)):
         with conn:
             c.execute("""
             INSERT INTO timesheets VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)""", 
-            (# (int(uuid.uuid1()),
-             timesheet_data[i][0],
+            (timesheet_data[i][0],
              timesheet_data[i][1],
              timesheet_data[i][2],
              timesheet_data[i][3],
@@ -53,11 +52,9 @@ def populate_timesheet_table(timesheet_data):
              timesheet_data[i][6],
              timesheet_data[i][7],
              timesheet_data[i][8]))
-        
-        # id += 1
 
 def run_initial_setup():
-    if does_timesheets_table_exist() == 0: #if timesheets tables doesn't exist 
+    if does_timesheets_table_exist() == 0: #if timesheets table doesn't exist 
         create_timesheets_table() 
         csv_file = convert_csv_file()
-        populate_timesheet_table(csv_file) #fill table with data
+        populate_timesheet_table(csv_file)

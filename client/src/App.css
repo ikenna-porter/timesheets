@@ -51,6 +51,8 @@ tr {
     font-size: 14px;
 }
 
+tr:hover {background-color: rgb(239, 239, 239);}
+
 /* Name, clients and hours columns */
 td:nth-child(-n+3) {color: #5a83ac;}
 
@@ -80,6 +82,7 @@ td:nth-child(6) {font-weight: bold;}
     text-align: center;
     width: 40%;
     margin: 1em;
+    background-color: rgba(245,245,245,1);
 }
 
   input, select {
@@ -102,8 +105,14 @@ input[type="date"]:invalid {color: grey;}
 
 button {
     margin-top: 10px; 
-    padding: 3px 18px;
+    padding: 4px 24px;
+    background-color: rgb(198, 196, 196);
+    border: 1px rgb(171, 169, 169) solid;
+    border-radius: 3px;
+    font-size: 15px;
 }
+
+button:hover {background-color: rgb(162, 160, 160);}
 
 .inputContainer {
     text-align: left;

@@ -1,4 +1,4 @@
-import {useState, useEffect} from "react";
+import {useState} from "react";
 
 function TimesheetForm(props) {
     const [date, setDate] = useState("");
@@ -22,7 +22,7 @@ function TimesheetForm(props) {
             "billable": billable,
             "first_name": firstName,
             "last_name": lastName,
-            "billable_rate": (billable === "yes" ? billableRate : 0),
+            "billable_rate": (billable === "Yes" ? billableRate : 0),
         }
 
         const url = "http://localhost:8000/api/timesheets";
@@ -67,8 +67,8 @@ function TimesheetForm(props) {
                 <label htmlFor="billable">Billable: </label>
                 <select onChange={e => setBillable(e.target.value)} required="required" id="billable" name="billable">
                     <option value="" hidden></option>
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
                 </select>
             </div>
             <div className="inputContainer">
@@ -84,7 +84,7 @@ function TimesheetForm(props) {
                 <input
                     onChange={e => setBillableRate(e.target.value)}
                     required="required" name="billable-rate" id="billable-rate" type="number" defaultValue="0"
-                    step="0.01" min="0" disabled={billable === "no" ? true : false}/>
+                    step="0.01" min="0" disabled={billable === "No" ? true : false}/>
             </div>
             <button type="submit">Submit</button>
         </form>

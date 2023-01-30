@@ -19,7 +19,7 @@ export const parseTimesheets = (unfilteredTimesheets) => {
 
 const calculateBillableHours = (timesheet) => {
     let billableHours;
-    if (timesheet.billable == "no") billableHours = 0;
+    if (timesheet.billable == "No") billableHours = 0;
     else billableHours = timesheet.hours;
     return billableHours;
 }
